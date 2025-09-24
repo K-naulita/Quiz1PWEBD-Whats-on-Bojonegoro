@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hometown - Bojonegoro</title>
+  <link rel="stylesheet" href="css/hometown.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Open+Sans&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html"><i data-feather="home"></i></a></li>
+      <li><a href="profile.html">Profile</a></li>
+      <li><a href="hometown.html" class="active">Hometown</a></li>
+      <li><a href="food.html">Food</a></li>
+      <li><a href="places.html">Places</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="overlay"></div>
+    <div class="content-left">
+      <h3>East Java, Indonesia</h3>
+      <h1>BOJONEGORO</h1>
+      <p>
+        A small district that borders East Java and Central Java. They say
+        there’s a lot of history buried here.
+      </p>
+    </div>
+    <div class="content-right">
+      <div class="box">
+        <h4>Oil City</h4>
+        <p>
+          It is one of the oil producing areas, so that there are oil companies
+          established here, including ExxonMobil.
+        </p>
+      </div>
+      <div class="box">
+        <h4>Passed by Bengawan Solo</h4>
+        <p>This city has many ancient fossil discoveries near this river.</p>
+      </div>
+    </div>
+    <button type="button" class="next-slide-hero" data-target=".hometown" aria-label="Lanjut ke Hometown">
+      <i data-feather="chevron-down"></i>
+    </button>
+  </section>
+
+  <!-- Hometown Section -->
+  <section class="hometown">
+    <div class="text-box hometown-box1">
+      <p>
+        Bojonegoro has <b>no sea and no mountains</b>, which means its challenges
+        do not come from tsunamis or earthquakes, but from floods. The <b>most devastating flood struck in 2005</b>, when the Bengawan Solo river overflowed and paralyzed much of the region. Yet, this same river is also a source of pride, celebrated every year through <b>the Bengawan Festival</b>, a vibrant cultural event where colorful costumes and creativity bring the riverbanks to life.
+      </p>
+    </div>
+
+    <div class="text-box green hometown-box2">
+      <h2>Bengawan Solo</h2>
+      <p>
+        It is the longest river on the island of Java. It flows through the city
+        and provides a livelihood for the surrounding community.
+      </p>
+    </div>
+
+    <div class="image1">
+      <img src="images/solo2.jpg" alt="Bengawan Solo 1">
+    </div>
+
+    <div class="image2">
+      <img src="images/solo1.jpg" alt="Bengawan Solo 2">
+    </div>
+
+    <button type="button" class="next-slide" data-target=".fosil" aria-label="Lanjut ke Fosil">
+      <i data-feather="chevron-down"></i>
+    </button>
+  </section>
+
+  <!-- Fosil Section -->
+  <section class="fosil">
+    <div class="fosil-container">
+      <div class="fosil-item image">
+        <img src="images/fosil1.jpg" alt="Gambar 1">
+      </div>
+      <div class="fosil-item box cream">
+        <p>
+          Because the Bengawan Solo River, the land has long supported rich ecosystems and proof of this is found in the many fossils unearthed here. Excavations have revealed remains of giant <b>Stegodon elephants, ancient buffalo, banteng, and even a three-meter fossil of a prehistoric whale.</b> Showing that the region once hosted both land and sea life.
+        </p>
+      </div>
+
+      <div class="fosil-item box brown">
+        <p>
+          Over millions of years, the same layers of earth that preserved these fossils also trapped rich deposits of oil and gas. Today, Bojonegoro is home to the Cepu Block and the Banyu Urip <b>oil field, among Indonesia’s largest, managed by ExxonMobil and Pertamina,</b> making energy production a new livelihood for the region.
+        </p>
+      </div>
+      <div class="fosil-item image">
+        <img src="images/fosil2.jpg" alt="Gambar 2">
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (window.feather) feather.replace();
+
+      document.querySelectorAll('.next-slide').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const sel = this.dataset.target;
+          let target = sel ? document.querySelector(sel) : null;
+          if (!target) {
+            const sec = this.closest('section');
+            if (sec) {
+              let next = sec.nextElementSibling;
+              while (next && next.tagName.toLowerCase() !== 'section') next = next.nextElementSibling;
+              target = next;
+            }
+          }
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+
+        btn.addEventListener('keydown', function (ev) {
+          if (ev.key === 'Enter' || ev.key === ' ') {
+            ev.preventDefault();
+            this.click();
+          }
+        });
+      });
+
+      document.querySelectorAll('.next-slide-hero').forEach(btn => {
+        btn.addEventListener('click', function () {
+          const sel = this.dataset.target;
+          const target = sel ? document.querySelector(sel) : null;
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+
+    feather.replace();
+  </script>
+</body>
+</html>

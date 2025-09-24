@@ -1,0 +1,237 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+  margin: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  background: rgba(0,0,0,0.7);
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(0,0,0,0.4);
+  transition: background 0.4s ease, padding 0.4s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(0,0,0,0.9);
+  padding: 8px 20px;
+}
+
+.navbar a {
+  
+  color: hsl(0, 100%, 97%);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: #ff5011;
+}
+
+/* Hero */
+.hero {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero .content {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-family: 'Spectral', serif; 
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(25px, 3vw, 30px);
+  margin-bottom: 10px;
+  color:#ffffff;
+}
+
+.hero h1.bojonegoro {
+  font-family: 'Archivo Black', sans-serif;
+  font-size: clamp(40px, 8vw, 100px);
+  font-weight: 700;
+  color: #c60101d5;
+  margin: 20px 0;
+}
+
+.hero p {
+  font-size: clamp(14px, 2vw, 18px);
+  margin-top: 5px;
+}
+
+/* Explore Section */
+.explore {
+  text-align: center;
+  padding: 80px 20px;
+  background: #000;
+  box-sizing: border-box;
+}
+
+.explore h2 {
+  font-size: clamp(22px, 4vw, 32px);
+  margin-bottom: 10px;
+}
+
+.explore p {
+  font-size: clamp(14px, 2vw, 18px);
+  margin-bottom: 40px;
+  color: #ccc;
+}
+
+/* grid container */
+.explore .places-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 10px;
+  gap: 30px;                    /* jarak antar card */
+}
+
+/* card as <a class="place"> */
+.explore .place {
+  display: block;               /* penting supaya width berlaku */
+  width: 260px;                 /* ukuran tiap card (3 jejer di layar lebar) */
+  flex: 0 0 260px;              /* jangan melar di flex */
+  background: #111;
+  border-radius: 18px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.35s cubic-bezier(.2,.9,.3,1), box-shadow 0.35s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+/* image di dalam card */
+.explore .place img {
+  display: block;
+  width: 100%;
+  height: 300px;               
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* hover efek zoom & lift */
+.explore .place:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+}
+.explore .place:hover img {
+  transform: scale(1.08);
+}
+
+/* judul card */
+.explore .place h3 {
+  margin: 12px 10px 18px;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  color: #fffbeb;
+  text-align: center;
+}
+.explore .white { 
+  color: #ffffff; 
+}
+
+.explore .yellow { 
+  color: #ffe99a;   /* kuning muda */
+}
+
+.explore .red { 
+  color: #ff4444;   /* merah */
+}
+
+/* animasi masuk (fade + up) untuk tiap .place */
+.explore .place {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.7s forwards;
+}
+.explore .place:nth-child(1) { animation-delay: 0.18s; }
+.explore .place:nth-child(2) { animation-delay: 0.36s; }
+.explore .place:nth-child(3) { animation-delay: 0.54s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- Responsive: ubah layout ketika layar mengecil ---------- */
+@media (max-width: 1000px) {
+  .explore .place {
+    width: 46%;
+    flex: 0 0 46%;
+  }
+  .explore .place img { height: 220px; }
+}
+
+@media (max-width: 600px) {
+  .explore .places-grid {
+    gap: 18px;
+  }
+  .explore .place {
+    width: 100%;
+    flex: 0 0 100%;
+    border-radius: 14px;
+  }
+  .explore .place img { height: 220px; }
+  .explore h2 { font-size: clamp(20px, 6vw, 30px); }
+  .explore p { font-size: clamp(13px, 3vw, 16px); }
+}
+
+.explore .place {
+  position: relative;
+}
+
+.explore .place .overlay {
+  position: absolute;
+  inset: 0; 
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  transition: opacity 0.4s ease;
+}
+
+.explore .place:hover .overlay {
+  opacity: 1;
+}
+
+.explore .place .overlay h4 {
+  font-size: 16px;
+  margin: 0;
+  color: #fff;
+}
+
+.explore .place .overlay p {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #ddd;
+}
+

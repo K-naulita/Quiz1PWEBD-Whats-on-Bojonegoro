@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/profile.css">
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html"><i data-feather="home"></i></a>
+    <a href="profile.html" class="active">Profile</a>
+    <a href="hometown.html">Hometown</a>
+    <a href="food.html">Food</a>
+    <a href="places.html">Places</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <a href="#profile-section" class="next-btn">
+      <i data-feather="chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- Profile Section -->
+  <section id="profile-section" class="profile-card">
+    <div class="profile-left">
+      <img src="images/profil3.JPG" alt="My Photo">
+    </div>
+    <div class="profile-right">
+      <h1><span>Kartika</span> <span class="highlight">Nana</span> <span>Naulita</span></h1>
+      <p class="desc">
+        A passionate second-year Informatics Engineering student with strong creativity 
+        and excellent public speaking skills. Actively involved in technology communities, 
+        competitions, and volunteer activities, always striving to learn, grow, and inspire others.
+      </p>
+      <div class="footer-info">
+        <p>Informatics '24</p>
+        <p>5025241021</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Extra Section bawah profile -->
+  <section class="profile-extra">
+    <img src="images/profil4.png" alt="aktivitas">
+  </section>
+
+  <script>
+    feather.replace();
+    window.addEventListener("scroll", () => {
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>

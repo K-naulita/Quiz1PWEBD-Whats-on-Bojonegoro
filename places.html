@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Must-Visit Places in Bojonegoro</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/places.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <a href="index.html"><i data-feather="home"></i></a>
+    <a href="profile.html">Profile</a>
+    <a href="hometown.html">Hometown</a>
+    <a href="food.html">Food</a>
+    <a href="places.html" class="active">Places</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" style="background: url('images/bg-places.png') center/cover no-repeat;">
+    <div class="overlay"></div>
+    <div class="content"style="position: relative;">
+      <h2>Must-Visit Places in</h2>
+      <h1 class="bojonegoro">BOJONEGORO</h1>
+      <p><em>From forests and rivers to cultural sites, Bojonegoro offers unique experiences you won’t forget.</em></p>
+    </div>
+  </section>
+
+  <!-- Explore Section -->
+  <section class="explore fade-in">
+    <h2>
+      <span class="white">Let's Explore</span>
+      <span class="yellow">What They Have?</span>
+    </h2>
+    <p>
+      Bojonegoro is indeed an <span class="red">oil city</span>, 
+      but what else does this city have besides that?
+    </p>
+
+    <div class="places-grid">
+      <a href="#belimbing" class="place fade-in">
+        <img src="images/belimbing.jpg" alt="Agrowisata Kebun Belimbing">
+        <h3>Agrowisata Kebun Belimbing</h3>
+      </a>
+
+      <a href="#grogolan" class="place fade-in">
+        <img src="images/grogolan.jpeg" alt="Grogolan">
+        <h3>Grogolan</h3>
+      </a>
+
+      <a href="#kayangan" class="place fade-in">
+        <img src="images/kayangan-api.webp" alt="Kayangan Api">
+        <h3>Kayangan Api</h3>
+      </a>
+    </div>
+  </section>
+
+  <!-- Detail Section -->
+<section class="destinations">
+
+  <!-- Belimbing -->
+  <div id="belimbing" class="card belimbing">
+    <h2>Agrowisata Kebun Belimbing</h2>
+    <p>
+      A refreshing agro-tourism spot where visitors can enjoy vast starfruit gardens. 
+      It offers both leisure and educational experiences about farming while tasting fresh local produce.
+    </p>
+    <div class="photo-grid">
+      <img src="images/belimbing1.webp" alt="Belimbing 1">
+      <img src="images/belimbing2.webp" alt="Belimbing 2">
+      <img src="images/belimbing.jpg" alt="Belimbing 3">
+    </div>
+  </div>
+
+  <!-- Grogolan -->
+  <div id="grogolan" class="card grogolan">
+    <h2>Grogolan</h2>
+    <p>
+      A serene natural spring with clear, cool waters. Grogolan is a favorite destination 
+      for relaxing, swimming, and enjoying the peaceful atmosphere of Bojonegoro's nature.
+    </p>
+    <div class="photo-grid">
+      <img src="images/grogolan.jpeg" alt="Grogolan 1">
+      <img src="images/grogolan2.jpg" alt="Grogolan 2">
+      <img src="images/grogolan3.jpeg" alt="Grogolan 3">
+    </div>
+  </div>
+
+  <!-- Kayangan Api -->
+  <div id ="kayangan"class="card kayangan">
+    <h2>Kayangan Api</h2>
+    <p>
+      A natural eternal flame that has been burning for centuries. It is a sacred site 
+      surrounded by lush forests and serves as a unique cultural and geological landmark of Bojonegoro.
+    </p>
+    <div class="photo-grid">
+      <img src="images/kayangan-api.webp" alt="Kayangan Api 1">
+      <img src="images/kayangan2.jpg" alt="Kayangan Api 2">
+      <img src="images/kayangan3.webp" alt="Kayangan Api 3">
+    </div>
+  </div>
+
+</section>
+
+<style>
+  .destinations {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .card {
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+  }
+
+  .belimbing { background: #6b8e23; }  
+  .grogolan { background: #222; }      
+  .kayangan { background: #8b0000; }   
+
+  .card h2 {
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  /* Grid foto */
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  .photo-grid img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+</style>
+
+
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
