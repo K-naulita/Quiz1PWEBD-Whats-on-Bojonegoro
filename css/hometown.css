@@ -1,22 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: 'Open Sans', sans-serif;
   color: #fff;
   background-color: #000;
 }
 
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  padding: 15px 0px;
-  background: rgba(0,0,0,0.5);
+  padding: 15px 20px;         
+  background: rgba(0,0,0,0.5);  
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1000;
+  font-family: 'Poppins', sans-serif;
 }
 
 .navbar ul {
@@ -25,19 +24,32 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar ul li a {
-  font-family: 'Poppins', sans-serif;
   color: #ddd;
   text-decoration: none;
   font-weight: 600;
+  font-size: 16px;
+  line-height: 1;         
+  display: flex;
+  align-items: center;
   transition: color 0.3s;
+  padding: 0;                 
 }
 
 .navbar ul li a:hover,
 .navbar ul li a.active {
-  color: #71822b;
+  color: #71822b !important; 
+}
+
+.navbar ul li a i {
+  vertical-align: middle;
+  font-size: 1.2rem;
+  line-height: 0;
+  margin-right: 6px;
 }
 
 .hero {

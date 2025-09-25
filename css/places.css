@@ -1,41 +1,41 @@
 body {
   font-family: 'Poppins', sans-serif;
   background: #000;
-  color: #fff;
+  color: #190f0f;
   margin: 0;
 }
 
 /* Navbar */
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.8) !important; 
+  transition: background 0.4s ease, padding 0.4s ease;
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(0,0,0,0.4);
-  transition: background 0.4s ease, padding 0.4s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.9) !important;
   padding: 8px 20px;
 }
 
-.navbar a {
-  
-  color: hsl(0, 100%, 97%);
-  text-decoration: none;
+.navbar-nav .nav-link {
+  color: #fefefe;
   font-weight: 600;
+  margin: 0 20px;
   transition: color 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #ff5011;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #be070d !important;
+}
+
+.navbar-nav .nav-link i {
+  vertical-align: middle;
+  font-size: 1.2rem;
 }
 
 /* Hero */
@@ -110,14 +110,14 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 10px;
-  gap: 30px;                    /* jarak antar card */
+  gap: 30px;                
 }
 
 /* card as <a class="place"> */
 .explore .place {
-  display: block;               /* penting supaya width berlaku */
-  width: 260px;                 /* ukuran tiap card (3 jejer di layar lebar) */
-  flex: 0 0 260px;              /* jangan melar di flex */
+  display: block;          
+  width: 260px;                
+  flex: 0 0 260px;             
   background: #111;
   border-radius: 18px;
   overflow: hidden;
@@ -159,11 +159,11 @@ body {
 }
 
 .explore .yellow { 
-  color: #ffe99a;   /* kuning muda */
+  color: #ffe99a;   
 }
 
 .explore .red { 
-  color: #ff4444;   /* merah */
+  color: #ff4444;  
 }
 
 /* animasi masuk (fade + up) untuk tiap .place */

@@ -5,35 +5,37 @@ body {
   color: #fff;
 }
 
-/* Navbar */
+/* Navbar*/
 .navbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.4) !important; 
+  transition: background 0.4s ease, padding 0.4s ease;
   padding: 15px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: background 0.4s ease, padding 0.4s ease;
 }
 
 .navbar.scrolled {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.9) !important;
   padding: 8px 20px;
 }
 
-.navbar a {
+.navbar-nav .nav-link {
   color: #fefefe;
-  text-decoration: none;
   font-weight: 600;
+  margin: 0 20px;
   transition: color 0.3s;
+  font-family: 'Poppins', sans-serif;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: #e69194;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #f9aeb0 !important;
+}
+
+.navbar-nav .nav-link i {
+  vertical-align: middle;
+  font-size: 1.2rem;
 }
 
 /* Hero Section */
@@ -51,7 +53,7 @@ body {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255, 80, 17, 0.9);
+  background: rgba(255, 173, 144, 0.9);
   color: white;
   padding: 12px;
   border-radius: 50%;
