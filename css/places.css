@@ -80,6 +80,7 @@ body {
 .hero p {
   font-size: clamp(14px, 2vw, 18px);
   margin-top: 5px;
+  color: #ddd;
 }
 
 /* Explore Section */
@@ -234,4 +235,5 @@ body {
   margin-top: 5px;
   color: #ddd;
 }
+
 
